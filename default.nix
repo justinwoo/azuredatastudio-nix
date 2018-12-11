@@ -9,7 +9,7 @@ in pkgs.stdenv.mkDerivation {
 
   unpackPhase = ''
     mkdir -p $out
-    tar xf $src --strip 1 -C $out
+    ${pkgs.gnutar}/bin/tar xf $src --strip 1 -C $out
   '';
 
   dontInstall = true;
