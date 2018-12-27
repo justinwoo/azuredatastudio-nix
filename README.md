@@ -1,5 +1,7 @@
 # Azure Data Studio / SQLDevOps Nix derivation
 
+[![Build Status](https://travis-ci.org/justinwoo/azuredatastudio-nix.svg?branch=master)](https://travis-ci.org/justinwoo/azuredatastudio-nix)
+
 A simple derivation for Azure Data Studio/SQLDevOps: <https://github.com/Microsoft/azuredatastudio>
 
 ## Status
