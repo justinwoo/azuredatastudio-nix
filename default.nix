@@ -20,6 +20,7 @@ in pkgs.stdenv.mkDerivation rec {
   rpath = with pkgs; lib.concatStringsSep ":" [
     atomEnv.libPath
     "$out"
+    "$out/resources/app/extensions/mssql/sqltoolsservice/Linux/1.5.0-alpha.60"
   ];
 
   fixupPhase = ''
