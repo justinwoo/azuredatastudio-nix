@@ -6,8 +6,4 @@ A simple derivation for Azure Data Studio/SQLDevOps: <https://github.com/Microso
 
 ## Status
 
-Works on non-NixOS with appropriate Node/GTK dependencies
-
-## Help wanted
-
-Getting this electron app wrapped with the appropriate rpath made for patchelf will be quite arduous, but might be worthwhile. Please consider contributing.
+Works by using the rpath from nixpkgs.atomEnv. If you run into a problem, file an issue and someone might be able to help.
