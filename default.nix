@@ -15,6 +15,6 @@ in pkgs.stdenv.mkDerivation {
   '';
 
   installPhase = ''
-    install -D -m555 $out/azuredatastudio/bin/azuredatastudio $out/bin/azuredatastudio
+    install -D -m555 $out/azuredatastudio/azuredatastudio $out/bin/azuredatastudio
   '';
 }
