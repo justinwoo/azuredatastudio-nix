@@ -7,14 +7,10 @@ in pkgs.stdenv.mkDerivation {
     sha256 = "16n2gqnsf5maxjfvvb2157jdiq4ynsgvaka2bccqnpx66mlp2276";
   };
 
-  phases = "unpackPhase installPhase";
+  phases = "unpackPhase";
 
   unpackPhase = ''
-    mkdir -p $out/azuredatastudio
-    ${pkgs.gnutar}/bin/tar xf $src --strip 1 -C $out/azuredatastudio
-  '';
-
-  installPhase = ''
-    install -D -m555 $out/azuredatastudio/azuredatastudio $out/bin/azuredatastudio
+    mkdir -p $out
+    ${pkgs.gnutar}/bin/tar xf $src --strip 1 -C $out
   '';
 }
