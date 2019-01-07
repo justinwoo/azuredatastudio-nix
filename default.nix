@@ -32,6 +32,6 @@ in pkgs.stdenv.mkDerivation rec {
       ${targetPath}/azuredatastudio
 
     mkdir -p $out/bin
-    ln -s ${targetPath}/azuredatastudio $out/bin/azuredatastudio
+    ln -s ${targetPath}/bin/azuredatastudio $out/bin/azuredatastudio
   '';
 }
