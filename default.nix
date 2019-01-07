@@ -12,21 +12,26 @@ in pkgs.stdenv.mkDerivation rec {
 
   phases = "unpackPhase fixupPhase";
 
+  targetPath = "$out/azuredatastudio";
+
   unpackPhase = ''
-    mkdir -p $out
-    ${pkgs.gnutar}/bin/tar xf $src --strip 1 -C $out
+    mkdir -p ${targetPath}
+    ${pkgs.gnutar}/bin/tar xf $src --strip 1 -C ${targetPath}
   '';
 
   rpath = with pkgs; lib.concatStringsSep ":" [
     atomEnv.libPath
-    "$out"
-    "$out/resources/app/extensions/mssql/sqltoolsservice/Linux/1.5.0-alpha.60"
+    targetPath
+    "${targetPath}/resources/app/extensions/mssql/sqltoolsservice/Linux/1.5.0-alpha.60"
   ];
 
   fixupPhase = ''
     patchelf \
       --set-interpreter "${dynamic-linker}" \
       --set-rpath "${rpath}" \
-      $out/azuredatastudio
+      ${targetPath}/azuredatastudio
+
+    mkdir -p $out/bin
+    ln -s ${targetPath}/azuredatastudio $out/bin/azuredatastudio
   '';
 }
