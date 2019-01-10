@@ -6,8 +6,8 @@ let
 in pkgs.stdenv.mkDerivation rec {
   name = "azuredatastudio";
   src = pkgs.fetchurl {
-    url = "https://github.com/Microsoft/azuredatastudio/releases/download/1.3.6/azuredatastudio-linux-1.3.6.tar.gz";
-    sha256 = "16n2gqnsf5maxjfvvb2157jdiq4ynsgvaka2bccqnpx66mlp2276";
+    url = "https://github.com/Microsoft/azuredatastudio/releases/download/1.3.8/azuredatastudio-linux-1.3.8.tar.gz";
+    sha256 = "0aq8s6sa4mxbwgqg4j2g720fn07gfyiw14fl6742jlwhssx0zy9s";
   };
 
   phases = "unpackPhase fixupPhase";
