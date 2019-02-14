@@ -6,8 +6,8 @@ let
 in pkgs.stdenv.mkDerivation rec {
   name = "azuredatastudio";
   src = pkgs.fetchurl {
-    url = "https://github.com/Microsoft/azuredatastudio/releases/download/1.3.8/azuredatastudio-linux-1.3.8.tar.gz";
-    sha256 = "0aq8s6sa4mxbwgqg4j2g720fn07gfyiw14fl6742jlwhssx0zy9s";
+    url = "https://github.com/Microsoft/azuredatastudio/releases/download/1.4.5/azuredatastudio-linux-1.4.5.tar.gz";
+    sha256 = "1x8rpwdhy7nvlfrz4lm7cla4dk2x1dahzg3hzinjmhhzw948x4z7";
   };
 
   phases = "unpackPhase fixupPhase";
@@ -22,7 +22,7 @@ in pkgs.stdenv.mkDerivation rec {
   rpath = with pkgs; lib.concatStringsSep ":" [
     atomEnv.libPath
     targetPath
-    "${targetPath}/resources/app/extensions/mssql/sqltoolsservice/Linux/1.5.0-alpha.60"
+    "${targetPath}/resources/app/extensions/mssql/sqltoolsservice/Linux/1.5.0-alpha.71"
   ];
 
   fixupPhase = ''
